@@ -16,7 +16,19 @@ public class Main {
             }
         }.start();
 
-        Thread myRunnable = new Thread(new MyRunnable());
+        Thread myRunnable = new Thread(new MyRunnable(){
+            @Override
+            public void run() {
+                System.out.println(ThreadColour.ANSI_CYAN + "From anonymous class's implementation of run()");
+                try{
+                    anotherThread.join();  // can also do join(2000)
+                    System.out.println(ThreadColour.ANSI_CYAN + "anotherThread has terminated so i'm running");
+                }
+                catch (InterruptedException e){
+                    System.out.println(ThreadColour.ANSI_CYAN + "I was interrupted");
+                }
+            }
+        });
         myRunnable.start();
 
         System.out.println(ThreadColour.ANSI_GREEN + "hello again from the main Thread");

@@ -9,6 +9,7 @@ public class AnotherThread extends Thread{
         }
         catch (InterruptedException e){
             System.out.println(ThreadColour.ANSI_RED + "I was interrupted by another unknown Thread which caused " + e);
+            return;
         }
 
         System.out.println(ThreadColour.ANSI_RED + "3 Seconds has passed");
