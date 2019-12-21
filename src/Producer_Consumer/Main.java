@@ -11,8 +11,8 @@ public class Main {
 
     public static void main(String args[]){
         Message message = new Message();
-        (new Thread(new Writer(message))).start();
-        (new Thread(new Reader(message))).start();
+        (new Thread(new Writer(message), "Writer")).start();
+        (new Thread(new Reader(message), "Reader")).start();
     }
 }
 
@@ -30,7 +30,7 @@ class Message{
                 wait();
             }
             catch (InterruptedException e){
-
+                e.printStackTrace();
             }
         }
         empty = true;
@@ -45,7 +45,7 @@ class Message{
                 wait();
             }
             catch (InterruptedException e){
-
+                e.printStackTrace();
             }
         }
         empty = false;
