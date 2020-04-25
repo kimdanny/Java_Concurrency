@@ -33,6 +33,9 @@ public class Main {
 
         /*Option 2 to start the thread - with Fixed Thread Pool*/
         int coreCount = Runtime.getRuntime().availableProcessors();
+        System.out.println("coreCount = " + coreCount);
+        // TODO: See how the outputs differ from the number of Threads allowed in the pool.
+        // TODO continued: try 1 for single Thread, many more for multi-thread, and coreCount for theoretically optimal number of threads
         ExecutorService executorService = Executors.newFixedThreadPool(coreCount);
 
         executorService.execute(myProducer);
