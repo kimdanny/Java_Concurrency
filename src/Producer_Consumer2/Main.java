@@ -1,4 +1,4 @@
-package ProducerConsumer2;
+package Producer_Consumer2;
 
 import Thread_and_Runnable.ThreadColour;
 
@@ -8,7 +8,7 @@ import java.util.Random;
 import java.util.concurrent.*;
 import java.util.concurrent.locks.ReentrantLock;
 
-import static ProducerConsumer2.Main.EOF;
+import static Producer_Consumer2.Main.EOF;
 
 public class Main {
     public static final String EOF = "EOF";
